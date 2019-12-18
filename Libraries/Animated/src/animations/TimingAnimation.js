@@ -12,6 +12,7 @@
 
 const AnimatedValue = require('../nodes/AnimatedValue');
 const AnimatedValueXY = require('../nodes/AnimatedValueXY');
+const AnimatedInterpolation = require('../nodes/AnimatedInterpolation');
 const Animation = require('./Animation');
 
 const {shouldUseNativeDriver} = require('../NativeAnimatedHelper');
@@ -27,7 +28,8 @@ export type TimingAnimationConfig = AnimationConfig & {
         y: number,
         ...
       }
-    | AnimatedValueXY,
+    | AnimatedValueXY
+    | AnimatedInterpolation,
   easing?: (value: number) => number,
   duration?: number,
   delay?: number,
